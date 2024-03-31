@@ -1,0 +1,22 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block encabezado %}
+<h1 class="text-center" style="color:white">Cursos</h1>
+{% endblock %}
+{% block contenido %}
+<h1>Formulario - Agregar Curso</h1>
+    <form action="alta_curso" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+        <p class='col-sm-6'>Nombre: <input  type="text" name="nombre" required></p>
+        </div> 
+        <p>Camada:  <input type="number" name="camada" required></p>
+        
+
+        <button>Enviar</button>
+    </form>
+
+
+{% endblock %}

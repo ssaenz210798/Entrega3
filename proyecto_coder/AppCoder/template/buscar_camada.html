@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block encabezado %}
+<h1 class="text-center" style="color:white">Buscar Curso por camada</h1>
+{% endblock %}
+{% block contenido %}
+
+
+    <h2>Podes buscar una camada:</h2>
+    <form action="buscar" method="GET">
+        <input type="text" name="camada" id="camada">
+        <button>Buscar</button>
+    </form>
+
+{% endblock %}

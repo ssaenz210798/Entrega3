@@ -1,0 +1,30 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+
+    {% if cursos %}
+    <h2>Podes buscar una camada:</h2>
+    <form action="buscar" method="GET">
+        <input type="text" name="camada" id="camada">
+        <button>Buscar</button>
+    </form>
+    
+        <ul>
+
+        {% for curso in cursos %}
+        <p>Estamos buscando el {{curso.camada}}</p>
+            <li>Nombre: {{curso.nombre}}</li>
+            <li>Camada: {{curso.camada}}</li>
+    
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron cursos con esa camada</p>
+    {% endif %}
+
+
+{% endblock %}

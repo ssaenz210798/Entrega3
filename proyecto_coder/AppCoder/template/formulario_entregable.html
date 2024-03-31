@@ -1,0 +1,31 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block encabezado %}
+<h1 class="text-center" style="color:white">Entregables</h1>
+{% endblock %}
+
+{% block contenido %}
+    <h1>Formulario - Agregar Entregable</h1>
+    <form action="entregables" method="post">
+        {% csrf_token %}
+        
+        
+        <div class="form-group">
+            <label for="nombre" class='col-sm-1'>Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="nombre" class='col-sm-1'>Fecha de entrega:</label>
+            <input type="text" name="fecha" id="fecha" required>
+        </div>
+        
+        
+
+        <p>Entregado: <input type="checkbox" name="entregado" ></p>
+         
+        <button>Enviar</button>
+    </form>
+{% endblock %}

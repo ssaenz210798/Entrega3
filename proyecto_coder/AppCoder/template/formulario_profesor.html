@@ -1,0 +1,31 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+{% block encabezado %}
+<h1 class="text-center" style="color:white">Profesores</h1>
+{% endblock %}
+
+{% block contenido %}
+    <h1>Formulario - Agregar Profesor</h1>
+    <form action="profesores" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nombre" class='col-sm-1'>Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="apellido" class='col-sm-1'>Apellido:</label>
+            <input type="text" name="apellido" id="apellido" required>
+        </div>
+        <div class="form-group">
+            <label for="email" class='col-sm-1'>Email:</label>
+            <input type="text" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="profesion" class='col-sm-1'>Profesion:</label>
+            <input type="text" name="profesion" id="profesion" required>
+        </div>
+        
+        <button>Enviar</button>
+    </form>
+{% endblock %}
